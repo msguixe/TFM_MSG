@@ -1,0 +1,17 @@
+[pre]
+. "/home/$USER/miniconda3/etc/profile.d/conda.sh"
+conda activate cptac
+[params]
+cores = 1
+memory = 200G
+[jobs]
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 0 10000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 10000 20000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 20000 30000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 30000 40000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 40000 50000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 50000 60000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 60000 70000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 70000 80000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 80000 90000
+python3 /workspace/users/msanchezg/python_scripts/NMD_table.py 90000 96140 

@@ -1,0 +1,3 @@
+#To create a nicer table for NMD predictive score
+
+zcat /workspace/datasets/nmdetective/hg38_NMDetectiveA_Lindeboom_et_al.v2.gtf.gz | awk 'BEGIN{FS=OFS="\t";print "CHROM\tFeature\tStart\tEnd\tStrand\tFrame\tgene_id\ttranscript_id\texon_number\texon_id\tnmd_score"}/nmd/{split($9,line,";")}/nmd/{printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", $1,$3,$4,$5,$7,$8,line[1],line[2],line[3],line[4],line[5]}' | sed 's/gene_id //g' | sed 's/transcript_id //g' | sed 's/exon_number //g' | sed 's/exon_id //g' | sed 's/nmd_score //g' > nmd.scores.A.tsv
