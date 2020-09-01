@@ -1,5 +1,7 @@
 # TFM_MSG
-**Final Master Project of Master in Omics Data Analysis**\
+**Final Master Project**\
+Master in Omics Data Analysis, Universitat de Vic (UVIC)
+
 Necessary code to reproduce all the data from the final master project entitled as:\
 *"The impact and function of C-terminal degrons and protein misfolding in the degradation of truncated proteins"*\
 <pre>
@@ -8,7 +10,7 @@ Supervisor:   Francisco Martínez Jiménez
 Course:       2019/2020
 </pre>
 
-The code is in order to reproduce all the results: reading the original files, obtaining intermediate tables and the plots for the final report.
+The following index indicates the numeric order to reproduce all the results: reading the original files, obtaining intermediate tables and the plots for the final report.
 
 1. VAF CPTAC table code (.sh)
 2. NMD_annotation\
