@@ -3,7 +3,7 @@
 Master in Omics Data Analysis, Universitat de Vic (UVIC)
 
 Necessary code to reproduce all the data from the final master project entitled as:\
-*"The impact and function of C-terminal degrons and protein misfolding in the degradation of truncated proteins"*\
+*"The impact and function of C-terminal degrons and protein misfolding in the degradation of truncated proteins"*
 <pre>
 Student:      Mònica Sánchez Guixé
 Supervisor:   Francisco Martínez Jiménez
