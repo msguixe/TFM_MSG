@@ -18,7 +18,7 @@ The following index indicates the numeric order to reproduce all the results: re
   2.2 NMD_table_preprocessing.ipynb\
   2.3 NMD-score annotation code (.py)\
   2.4 Qmap NMD-score annotation (.qmap)
-3. Mutation, translation and c-terminal degron/last-aa annotation code (.ipynb)(**falta**)
-4. Relative mutation position code (.ipynb)(**falta**)
+3. Mutation, translation and c-terminal degron/last-aa annotation code (.ipynb)(**fix**)
+4. Relative mutation position code (.ipynb)(**fix**)
 5. CPTAC and CCLE data table preparation code (.py)
 6. Notebook for TFM figures (.ipynb)
