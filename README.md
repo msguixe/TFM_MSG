@@ -58,7 +58,7 @@ The following index indicates the numeric order to reproduce all the results: re
 
   Python script to prepare CPTAC and CCLE tables: 1) upload of preprocessed tables (with stability change and normalized protein expression calculated previously), 2) eliminate duplicated values, 3) add VAF (=AF) table (CPTAC dataset), 4) add NMD score table, 5) filter out CNA >=2 and <=2 (CCLE dataset), 6) calculate RNA fold change, 7) add c-terminal degron table, 8) add c-terminal amino acid table, 9) annotate c-terminal degron alterations.
   
-**6. Notebook for TFM figures**
+## 6. Final report figures
   >Figures TFM.ipynb
 
   Notebook with the necessary code to reproduce all the figures in the final report. It needs the tables created in the previous steps.
