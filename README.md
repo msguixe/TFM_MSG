@@ -46,12 +46,12 @@ The following index indicates the numeric order to reproduce all the results: re
   Qmap file to run multiple NMD_table.py (per grouped rows). After all tables are compiled, we have to concatenate all tables in a single table.
     
 ### 3. Mutation, translation and c-terminal degron/last-aa annotation code
-  >Generation_ns_fs_mut_sequences.ipynb (*fix*)
+  >Generation_ns_fs_mut_sequences.ipynb
 
   Notebook with the necessary code to generate mutated sequences, translation and c-terminal degron/amino acid annotation. It creates 2 files (for each dataset): the first are protein sequences and c-terminal degron annotations, and the second is the c-terminal amino acid annotation.
   
 ### 4. Relative mutation position code
-  >Relative mutation position analysis.ipynb (*fix*)
+  >Relative mutation position analysis.ipynb
 
   Notebook with the necessary code to calculate the relative mutation position in the protein sequence. It creates one file (for each dataset) with the relative position annotated.
   
