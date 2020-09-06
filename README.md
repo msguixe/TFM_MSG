@@ -1,6 +1,8 @@
 # Final Master Project
 
-Master in Omics Data Analysis, Universitat de Vic (UVIC)
+**Master in Omics Data Analysis, Universitat de Vic (UVIC)**\
+**Barcelona Biomedical Genomics Lab (BBGLab) https://bbglab.irbbarcelona.org/** \
+**Institut de Recerca Biomèdica de Barcelona (IRB Barcelona)**
 
 Necessary code to reproduce all the data from the final master project entitled as:\
 *"The impact and function of c-terminal degrons and protein misfolding in the degradation of truncated proteins"*
