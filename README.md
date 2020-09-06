@@ -19,7 +19,7 @@ The following index indicates the correct order to reproduce all the results fro
 
 ## Post-processing
 
-### 1. VAF CPTAC table code
+### 1. VAF CPTAC table
   >get_AF_VCF.sh
 
   Bash script to extract VAF from VCF files. It creates one tsv file per cancer type with the VAF (=AF) of each alterations
@@ -39,7 +39,7 @@ The following index indicates the correct order to reproduce all the results fro
   
   Prepare NMD score tables and CPTAC/CCLE with ns and fs genes tables for annotation.
     
-*  **2.3 NMD-score annotation code**
+*  **2.3 NMD-score annotation**
   >NMD_table.py
   
   Python script for NMD score annotation. In this code we have to specify the rows of the NMD table that we want in each run. Avoid run all rows at once, as it highly increases the compilation time. Use qmap file to run per grouped rows.
@@ -49,20 +49,20 @@ The following index indicates the correct order to reproduce all the results fro
   
   Qmap file to run multiple NMD_table.py (per grouped rows). After all tables are compiled, we have to concatenate all tables in a single tsv table.
     
-### 3. Mutation, translation and c-terminal degron/last-aa annotation code
+### 3. Mutation, translation and c-terminal degron/amino acid annotation
   >Generation_ns_fs_mut_sequences.ipynb
 
   Notebook with the necessary code to generate mutated sequences, translation and c-terminal degron/amino acid annotation. It creates 2 tsv files (for each dataset): the first are protein sequences and c-terminal degron annotations, and the second is the c-terminal amino acid annotation.
   
-### 4. Relative mutation position code
+### 4. Relative mutation position
   >Relative mutation position analysis.ipynb
 
   Notebook with the necessary code to calculate the relative mutation position in the protein sequence. It creates one tsv file (for each dataset) with the relative mutation positions annotated.
   
-### 5. CPTAC and CCLE data table preparation code
+### 5. CPTAC and CCLE data table preparation
   >cptac_table.py
 
-  Python script to prepare CPTAC and CCLE tables: 1) upload of pre-processed tables, 2) eliminate duplicated values, 3) add VAF (=AF) table (CPTAC dataset), 4) add NMD score table, 5) filter out CNA >=2 and <=2 (CCLE dataset), 6) calculate RNA fold change, 7) add c-terminal degron table, 8) add c-terminal amino acid table, 9) add relative mutation positions table and 10) annotate c-terminal degron alterations.
+  Python script to prepare CPTAC and CCLE tables: 1) upload of pre-processed tables, 2) eliminate duplicated values, 3) add VAF (=AF) table (CPTAC dataset), 4) add NMD score table, 5) filter out CNA ≥2 and ≤-2 (CCLE dataset), 6) calculate RNA fold change, 7) add c-terminal degron table, 8) add c-terminal amino acid table, 9) add relative mutation positions table and 10) annotate c-terminal degron alterations.
   
 ## Data analysis
   
