@@ -13,6 +13,8 @@ Course:         2019/2020
 
 The following index indicates the correct order to reproduce all the results: reading the pre-processed tables, obtaining and merging intermediate tables and the plots for the final report.
 
+![GitHub Logo](Workflow_diagram_TFM.png)
+
 ## Post-processing
 
 ### 1. VAF CPTAC table code
