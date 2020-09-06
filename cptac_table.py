@@ -190,49 +190,6 @@ def cptac_table():
     cptac_df['Creating_cterm_degron'] = ~cptac_df['Cterm_degron'].isnull()
     cptac_df = cptac_df.drop_duplicates(subset=['ID'])
 
-    ################
-    #Disrupting internal degron
-    ################
-    print('Add disrupting degron column')
-    degron_annot_df = pd.read_excel('/workspace/users/msanchezg/notebooks/Degron_high_conf.xlsx')
-    degron_annot_df = degron_annot_df.drop_duplicates()
-    id_entry_ens_df = pd.read_csv('entry_id_degrons_enst.tab',sep='\t')
-    id_entry_ens_df = id_entry_ens_df.drop_duplicates()
-    id_entry_ens_df = id_entry_ens_df.rename(columns={'From':'Entry Isoform','To':'Feature'})
-    degron_annot_df = pd.merge(degron_annot_df,id_entry_ens_df,how='left')
-    degron_annot_df = degron_annot_df.rename(columns={'Start':'Start_Degron','End':'End_Degron'})
-    degron_annot_df = degron_annot_df[['Entry Isoform','Feature','Degron','Start_Degron','End_Degron']]
-
-    df = degron_annot_df[(~degron_annot_df['Feature'].isnull())]
-    ids = df['Feature'].to_list()
-    ids = set(ids)
-
-    degron_annot2_df = pd.DataFrame()
-    for gene in ids:
-        df = degron_annot_df[degron_annot_df['Feature']==gene].sort_values(by=['End_Degron'],ascending=False)
-        df = df[0:1]
-        degron_annot2_df = pd.concat([degron_annot2_df,df])
-
-    degron_annot_df = degron_annot2_df[['Feature','Degron','Start_Degron','End_Degron']]
-    cptac_df = pd.merge(cptac_df,degron_annot_df,how='left')
-
-    cptac_trunc_df = cptac_df[(cptac_df['Phenotype']=='stop_gained')|(cptac_df['Phenotype']=='frameshift_variant')]
-
-    cptac_trunc_df['Protein_position1'] = cptac_trunc_df['Protein_position'].str.split('-',expand=True)[0]
-    cptac_trunc_df['Protein_position1'] = cptac_trunc_df['Protein_position1'].astype(int)
-    cptac_trunc_df['Disrupting_degron'] = (cptac_trunc_df['End_Degron'] - cptac_trunc_df['Protein_position1'])>0
-
-    ################
-    #Disrupting cterm-degron
-    ################
-    print('Add disrupting cterm degron column')
-    cterm_degron_df = cptac_df[['gene','Cterm_degron']][cptac_df['Phenotype']=='WT']
-    cterm_degron_df = cterm_degron_df.drop_duplicates()
-    cterm_degron_df = cterm_degron_df.rename(columns={'Cterm_degron':'Cterm_degron_wt'})
-    cptac_trunc_df = pd.merge(cptac_trunc_df, cterm_degron_df, how='left')
-    cptac_trunc_df['Disrupting_cterm_degron'] = ~cptac_trunc_df['Cterm_degron_wt'].isnull()
-
-    cptac_df = pd.merge(cptac_df,cptac_trunc_df,how='left')
     return cptac_df
 
 def ccle_table():
@@ -369,49 +326,5 @@ def ccle_table():
     ccle_df['Creating_cterm_degron'] = ~ccle_df['Cterm_degron'].isnull()
     ccle_df = ccle_df.drop_duplicates(subset=['ID'])
 
-    ############################
-    #Disrupting internal degron
-    ############################
-    print('Add disrupting degron column')
-    degron_annot_df = pd.read_excel('/workspace/users/msanchezg/notebooks/Degron_high_conf.xlsx')
-    degron_annot_df = degron_annot_df.drop_duplicates()
-    id_entry_ens_df = pd.read_csv('entry_id_degrons_enst.tab',sep='\t')
-    id_entry_ens_df = id_entry_ens_df.drop_duplicates()
-    id_entry_ens_df = id_entry_ens_df.rename(columns={'From':'Entry Isoform','To':'Feature'})
-    degron_annot_df = pd.merge(degron_annot_df,id_entry_ens_df,how='left')
-    degron_annot_df = degron_annot_df.rename(columns={'Start':'Start_Degron','End':'End_Degron'})
-    degron_annot_df = degron_annot_df[['Entry Isoform','Feature','Degron','Start_Degron','End_Degron']]
-
-    df = degron_annot_df[(~degron_annot_df['Feature'].isnull())]
-    ids = df['Feature'].to_list()
-    ids = set(ids)
-
-    degron_annot2_df = pd.DataFrame()
-    for gene in ids:
-        df = degron_annot_df[degron_annot_df['Feature']==gene].sort_values(by=['End_Degron'],ascending=False)
-        df = df[0:1]
-        degron_annot2_df = pd.concat([degron_annot2_df,df])
-
-    degron_annot_df = degron_annot2_df[['Feature','Degron','Start_Degron','End_Degron']]
-    ccle_df = pd.merge(ccle_df,degron_annot_df,how='left')
-
-    ccle_trunc_df = ccle_df[(ccle_df['Phenotype']=='stop_gained')|(ccle_df['Phenotype']=='frameshift_variant')]
-    ccle_trunc_df = ccle_trunc_df.drop_duplicates(subset='ID',keep='first')
-
-    ccle_trunc_df['Protein_position1'] = ccle_trunc_df['Protein_position'].str.split('-',expand=True)[0]
-    ccle_trunc_df['Protein_position1'] = ccle_trunc_df['Protein_position1'].astype(int)
-    ccle_trunc_df['Disrupting_degron'] = (ccle_trunc_df['End_Degron'] - ccle_trunc_df['Protein_position1'])>0
-
-    ##########################
-    #Disrupting cterm-degron
-    ##########################
-    print('Add disrupting cterm degron column')
-    cterm_degron_df = ccle_df[['gene','Cterm_degron']][ccle_df['Phenotype']=='WT']
-    cterm_degron_df = cterm_degron_df.drop_duplicates()
-    cterm_degron_df = cterm_degron_df.rename(columns={'Cterm_degron':'Cterm_degron_wt'})
-    ccle_trunc_df = pd.merge(ccle_trunc_df, cterm_degron_df, how='left')
-    ccle_trunc_df['Disrupting_cterm_degron'] = ~ccle_trunc_df['Cterm_degron_wt'].isnull()
-
-    ccle_df = pd.merge(ccle_df,ccle_trunc_df,how='left')
     return ccle_df
 
