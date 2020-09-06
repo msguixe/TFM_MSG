@@ -60,7 +60,7 @@ The following index indicates the correct order to reproduce all the results fro
   Notebook with the necessary code to calculate the relative mutation position in the protein sequence. It creates one tsv file (for each dataset) with the relative mutation positions annotated.
   
 ### 5. CPTAC and CCLE data table preparation
-  >cptac_table.py
+  >postprocessing_tables.py
 
   Python script to prepare CPTAC and CCLE tables: 1) upload of pre-processed tables, 2) eliminate duplicated values, 3) add VAF (=AF) table (CPTAC dataset), 4) add NMD score table, 5) filter out CNA ≥2 and ≤-2 (CCLE dataset), 6) calculate RNA fold change, 7) add c-terminal degron table, 8) add c-terminal amino acid table, 9) add relative mutation positions table and 10) annotate c-terminal degron alterations.
   
