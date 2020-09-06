@@ -9,8 +9,8 @@ from operator import add
 pos1 = int(sys.argv[1])
 pos2 = int(sys.argv[2])
 
-nmdA_annot_df = pd.read_table("/workspace/users/msanchezg/notebooks/NMDetective/nmdA.annot.enst.tsv.gz", sep='\t')
-genes_ns_fs_df = pd.read_table("/workspace/users/msanchezg/notebooks/genes_ns_fs.tsv", sep='\t')
+nmdA_annot_df = pd.read_table("/workspace/users/msanchezg/notebooks/NMD_annotation/nmdA.annot.enst.tsv.gz", sep='\t')
+genes_ns_fs_df = pd.read_table("/workspace/users/msanchezg/notebooks/NMD_annotation/genes_ns_fs.tsv", sep='\t')
 genes_ns_fs_df = genes_ns_fs_df.rename(columns={'Feature':'Transcript_ens'})
 nmdA_annot_df = pd.merge(nmdA_annot_df,genes_ns_fs_df,how='inner')
 nmdA_annot_df['exon_range'] = nmdA_annot_df['End'] - nmdA_annot_df['Start']
