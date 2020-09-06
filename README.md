@@ -11,7 +11,7 @@ Academic tutor: Josep Maria Serrat Jurado
 Course:         2019/2020
 </pre>
 
-The following index indicates the correct order to reproduce all the results: reading the pre-processed tables, obtaining and merging intermediate tables and the plots for the final report.
+The following index indicates the correct order to reproduce all the results from post-processing (green) and data analysis (red): reading the pre-processed tables, obtaining and merging intermediate tables and compute the plots for the final report.
 
 ![GitHub Logo](Workflow_diagram_TFM.png)
 
