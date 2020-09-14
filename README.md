@@ -52,7 +52,7 @@ The following index indicates the correct order to reproduce all the results fro
 ### 3. Mutation, translation and c-terminal degron/amino acid annotation
   >Generation_ns_fs_mut_sequences.ipynb
 
-  Notebook with the necessary code to generate mutated sequences, translation and c-terminal degron/amino acid annotation. It creates 2 tsv files (for each dataset): the first are protein sequences and c-terminal degron annotations, and the second is the c-terminal amino acid annotation.
+  Notebook with the necessary code to generate mutated sequences, translation and c-terminal degron/amino acid annotation. It creates 2 tsv files (for each dataset): the first are protein sequences and c-terminal degron annotations, and the second are the c-terminal amino acid annotations.
   
 ### 4. Relative mutation position
   >Relative mutation position analysis.ipynb
@@ -62,11 +62,11 @@ The following index indicates the correct order to reproduce all the results fro
 ### 5. CPTAC and CCLE data table preparation
   >postprocessing_tables.py
 
-  Python script to prepare CPTAC and CCLE tables: 1) upload of pre-processed tables, 2) eliminate duplicated values, 3) add VAF (=AF) table (CPTAC dataset), 4) add NMD score table, 5) filter out CNA ≥2 and ≤-2 (CCLE dataset), 6) calculate RNA fold change, 7) add c-terminal degron table, 8) add c-terminal amino acid table, 9) add relative mutation positions table and 10) annotate c-terminal degron alterations.
+  Python script to prepare CPTAC and CCLE post-processed tables: 1) upload of pre-processed tables, 2) eliminate duplicated values, 3) add VAF (=AF) table (CPTAC dataset), 4) add NMD score table, 5) filter out CNA ≥2 and ≤-2 (CCLE dataset), 6) calculate RNA fold change, 7) add c-terminal degron table, 8) add c-terminal amino acid table, 9) add relative mutation positions table and 10) annotate c-terminal degron alterations.
   
 ## Data analysis
   
 ### 6. Final report figures
   >Figures TFM.ipynb
 
-  Notebook with the necessary code to reproduce all the plots and statistical analysis in the figures of the final report. Prepares the post-processed tables with the tables created in the post-processing steps.
+  Notebook with the necessary code to reproduce all the plots and statistical analysis in the figures of the final report. Prepares the post-processed tables with the posprocessing_tables.py script and the tables created in the post-processing steps.
